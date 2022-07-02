@@ -1,14 +1,17 @@
 import './App.css';
 import Menu from './components/Menu/Menu';
 import Titulo from './components/Título/Titulo';
+import Formulario from './components/Formulario/Formulario';
 
 function App() {
+
+// Esta variable sería lo que se conoce como un estado 
+let titulo = "Este es un título"; 
+
   return (
     <div>
       <Menu />
-      {/* lo de arriba es una llamada a una función */}
-      {/* Para las props imagina un objeto js que se va generando */}
-      <Titulo titulo = 'aquí una prop' subTitulo = 'aquí un subtítulo'/>
+      <Formulario />
     </div>
   );
 }

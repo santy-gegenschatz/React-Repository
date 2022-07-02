@@ -1,9 +1,32 @@
 .div-menu {
     background-color: black;
-    height: 50px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
     color: white;
+    margin: 10px 0px 10px 0px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-inline-start: 0px;
+    margin: 10px 0px 10px 0px;
+}
+
+li {
+    color: white;
+    margin: 10px;
+    list-style-type: none;
+}
+
+li a {
+    color: white;
+    text-decoration: none;
 }
