@@ -5,13 +5,17 @@ import Formulario from './components/Formulario/Formulario';
 
 function App() {
 
+const saludo = () => {
+  alert("Hola!");
+}
+
 // Esta variable sería lo que se conoce como un estado 
 let titulo = "Este es un título"; 
 
   return (
-    <div>
+    <div className='main-div'>
       <Menu />
-      <Formulario />
+      <Formulario saludar = {saludo} />
     </div>
   );
 }

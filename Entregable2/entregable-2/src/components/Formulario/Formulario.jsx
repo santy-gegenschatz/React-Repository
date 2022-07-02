@@ -1,10 +1,15 @@
 import './Formulario.css';
 
-const Formulario = () => {
+const Formulario = (props) => {
     return(
-      <form action="">
-        <input type="text" placeholder = "Nombre"/>
-      </form>
+        <div>
+            <div className='special-div'>
+                <form action="">
+                    <input type="text" placeholder = "Título"/>
+                    <input type="submit" value = "Cambiar Título de la Página" onClick={props.saludar}/>
+                </form>
+            </div>
+        </div>
     );
   }
 
