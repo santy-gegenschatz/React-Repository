@@ -1,12 +1,11 @@
 import './App.css';
 import Menu from './components/Menu/Menu';
-import Titulo from './components/Título/Titulo';
 import Formulario from './components/Formulario/Formulario';
-import ComponenteContenedor from './containers/ComponenteContenedor';
+import ItemListContainer from './containers/ItemListContainer/ItemListContainer';
 
 function App() {
 
-const saludo = () => {
+const alertar = () => {
   alert("Hola!");
 }
 
@@ -15,7 +14,9 @@ let titulo = "Este es un título";
 
   return (
     <div className='main-div'>
-      <ComponenteContenedor saludo = 'Hola Soy Container'/>
+      <Menu />
+      <Formulario prop = {alertar} />
+      <ItemListContainer greeting = "GREETING PASADO A TRAVÉS DE UN PROP Y DESESTRUCTURADO CON ÉXITO :)" />
     </div>
   );
 }

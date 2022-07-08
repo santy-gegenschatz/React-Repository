@@ -1,4 +1,5 @@
 import './Menu.css';
+import CartWidget from '../CartWidget/CartWidget';
 
 const Menu = function () {
     return (
@@ -25,6 +26,10 @@ const Menu = function () {
                      <a href = "/inicio"> Contacto </a>
                 </li>
             </ul>
+            <div>
+               <CartWidget items = '5'/>
+            </div>
+            
         </div>
     );
 }

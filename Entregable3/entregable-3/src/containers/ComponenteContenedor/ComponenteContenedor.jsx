@@ -6,10 +6,7 @@ import CartWidget from '../components/CartWidget/CartWidget';
 const ComponenteContenedor = ({saludo}) => {
   return (
     <div>
-      <Menu />
-      <Formulario saludar = {saludo} />
-      {saludo}
-      <CartWidget items = '5'/>
+      
     </div>
   )
 }
