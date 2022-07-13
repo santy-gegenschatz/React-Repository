@@ -10,13 +10,19 @@ input {
     text-align: center;
 }
 
+label {
+    background-color: grey;
+    color: white;
+    width: 50px;
+}
+
 .div-externo {
     background: rgb(84,77,215);
     background: linear-gradient(163deg, rgba(84,77,215,1) 0%, rgba(0,212,255,1) 100%);
     border-radius: 25px;
     margin: 10px 5px;  
     width: 30%;
-    height: 100px;
+    padding: 7px;
 }
 
 .div-principal {

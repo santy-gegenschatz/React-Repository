@@ -8,7 +8,7 @@ function App() {
       <Menu />
       <p> Entregable 4</p>
       <p> Generar un componente que permita añadir productos al carrito</p>
-      <AñadirProducto inicial = { 0 }/>
+      <AñadirProducto start = { 0 }/>
     </div>
   );
 }
