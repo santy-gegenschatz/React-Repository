@@ -7,7 +7,7 @@ const CartWidget = ({items}) => {
     <div>
         <div className='cart-div'>
             <img src={ image } alt="cart" id = 'small-image'/>
-            <p> Cart ({items})</p>
+            <p id = "label-cart"> Cart ({items})</p>
         </div>
         
     </div>

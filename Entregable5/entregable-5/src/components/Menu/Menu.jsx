@@ -4,14 +4,10 @@ import CartWidget from '../CartWidget/CartWidget';
 const Menu = function () {
     return (
         <div className = "div-menu">
-            <h1> Bienvenido al sistema de transferencias </h1>
+            <h1> Bienvenido al ecommerce Freerider </h1>
             <ul>
                 <li>
                      <a href = "/inicio"> Inicio </a>
-                </li>
-
-                <li>
-                     <a href = "/inicio"> Transaccionar </a>
                 </li>
 
                 <li>
@@ -19,11 +15,15 @@ const Menu = function () {
                 </li>
 
                 <li>
-                     <a href = "/inicio"> Transferencias </a>
+                     <a href = "/inicio"> Favoritos </a>
                 </li>
 
                 <li>
-                     <a href = "/inicio"> Contacto </a>
+                     <a href = "/inicio"> Gift Cards </a>
+                </li>
+
+                <li>
+                     <a href = "/inicio"> Ayuda </a>
                 </li>
             </ul>
             <div>

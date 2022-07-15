@@ -1,5 +1,5 @@
 .div-contenedor {
-    background-color: aquamarine;
+    background: #0F5257;
     display: flex;
     flex-direction: row;
     justify-content: center;

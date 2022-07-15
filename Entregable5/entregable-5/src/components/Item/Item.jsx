@@ -7,13 +7,14 @@ console.log(item.nombre);
   return (
     <div className = 'item-container'>
       <div className = 'image-container'>
-        <img src={item.url} alt="item" width = {100} />
+        <img src={item.url} alt="item" width = {200} height = {200}/>
       </div>
       <div className = 'details-container'>
-          <p> {item.nombre} </p>
-          <p> Precio : {item.precio} </p>
-          <p> Stock : {item.stock} </p>
-
+          <h5> {item.nombre} </h5>
+          <h6> <strong>{item.precio} USD </strong> </h6>
+          <button id = 'button-cart'> Add to Cart </button>
+          <br />
+          <button id = 'button-wishlist'> ❤️ to Wishlist </button>
         </div>
     </div>
   )
