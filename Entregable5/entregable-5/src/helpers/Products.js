@@ -1,5 +1,3 @@
-import React from 'react'
-
 let p1 = {id : "1", nombre: 'Remera Basic Black', precio : 15, stock : 10, url : ' '}
 let p2 = {id : "2", nombre: 'Jean Extra-Denim', precio : 40, stock : 6, url : ' '}
 let p3 = {id : "3", nombre: 'Camisa Regular White', precio : 25, stock : 20, url : ' '}
@@ -13,7 +11,7 @@ products.push(p3);
 products.push(p4);
 products.push(p5);
 
-const Products = ({resolution, delay}) => {
+const Products = (resolution, delay) => {
     let promesa = new Promise((resolve, reject) => {
         setTimeout(() => {
             if (resolution) {
@@ -23,7 +21,11 @@ const Products = ({resolution, delay}) => {
             }
         }, delay);
     });
+    console.log("Products");
+    console.log(products);
+    console.log("Promesa");
+    console.log(promesa);
   return (promesa)
 }
 
-export default Products
+export default Products;

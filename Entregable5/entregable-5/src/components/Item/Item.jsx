@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Item = ({item}) => {
-
+console.log(item.nombre);
   return (
     <div className = 'item-container'>
       <div className = 'image-container'>
@@ -11,7 +11,6 @@ const Item = ({item}) => {
           <p> {item.nombre} </p>
           <p> {item.precio} </p>
           <p> {item.stock} </p>
-          <AñadirProducto producto = {item}/>
         </div>
     </div>
   )
