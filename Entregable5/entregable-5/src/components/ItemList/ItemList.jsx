@@ -5,25 +5,29 @@ import './ItemList.css';
 
 const ItemList = () => {
 let [productos, setProductos] = useState([]);
+let [cargando, setCargando] = useState(true);
 
 useEffect(() => {
   let promesa = Products(true, 2000);
   promesa.then( (response) => {
     setProductos(response);
-    console.log(productos);
+    setCargando(false);
   });
 }, [])
 
   return (
     <div>
       <p> This is an Item List</p>
-      <p> Loading...</p>
-      <div className = 'div-contenedor'>
-          {productos.map(function(producto) {
-            return < Item key = {producto.id} item = {producto} />
-            })}
-      </div>
+      {cargando ? 
+        <p> Loading...</p>
+      :
+        <div className = 'div-contenedor'>
+        {productos.map(function(producto) {
+          return < Item key = {producto.id} item = {producto} />
+          })}
+        </div>
+      } 
     </div>
-    )
+  )
 }
 export default ItemList

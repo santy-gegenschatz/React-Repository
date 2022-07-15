@@ -1,11 +1,23 @@
 .div-menu {
     background-color: black;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 100%;
+    grid-template-areas: "left center right";
     margin: 0px;
+}
+
+.center {
+    grid-area: center;
+}
+
+.right {
+    grid-area: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 h1 {

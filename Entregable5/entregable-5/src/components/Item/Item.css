@@ -1,18 +1,38 @@
-button {
-    background-color: #9C92A3;
-}
-
+/* Classes */
 .item-container {
-    background-color: #0B3142;
+    background-color: black;
     width: 300px;
-    height: 365px;
+    height: 395px;
     border-radius: 25px;
     margin: 20px;
 }
 
 .image-container {
-    margin: 5px;
+    margin: 0px;
     border-radius: 15px;
-    background-color: rgb(235,235,235);
+    background-color: rgb(255,255,255);
     padding: 10px;
+}
+
+.white-text {
+    color: white;
+}
+
+/* Id's */
+#button-cart {
+    background-color: green;
+    width: 90%;
+    margin: 10px;
+    border: none;
+    border-radius: 15px;
+    color: white;
+}
+
+#button-wishlist {
+    background-color: lightblue;
+    width: 90%;
+    margin: 10px;
+    border: none;
+    border-radius: 15px;
+    color: white;
 }
