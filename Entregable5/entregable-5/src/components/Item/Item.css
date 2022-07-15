@@ -1,0 +1,13 @@
+.item-container {
+    background: rgb(92,85,230);
+    background: linear-gradient(163deg, rgba(92,85,230,1) 0%, rgba(0,243,255,1) 100%);
+    width: 30%;
+    border-radius: 25px;
+    margin: 20px;
+}
+
+.image-container {
+    margin: 10px;
+    background-color: white;
+    border: 15px;
+}
