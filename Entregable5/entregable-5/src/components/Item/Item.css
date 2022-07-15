@@ -1,17 +1,25 @@
 /* Classes */
-.item-container {
-    background-color: black;
-    width: 300px;
-    height: 395px;
-    border-radius: 25px;
-    margin: 20px;
-}
-
 .image-container {
     margin: 0px;
     border-radius: 15px;
     background-color: rgb(255,255,255);
     padding: 10px;
+}
+
+.item-container {
+    background-color: black;
+    width: 300px;
+    height: 415px;
+    border-radius: 25px;
+    margin: 20px;
+}
+
+.item-title {
+    margin: 5px;
+}
+
+.grey-text {
+    color: lightgrey;
 }
 
 .white-text {
@@ -22,16 +30,16 @@
 #button-cart {
     background-color: green;
     width: 90%;
-    margin: 10px;
+    margin: 3px 5px;
     border: none;
     border-radius: 15px;
     color: white;
 }
 
 #button-wishlist {
-    background-color: lightblue;
+    background-color: #7DE2D1;
     width: 90%;
-    margin: 10px;
+    margin: 8px 5px;
     border: none;
     border-radius: 15px;
     color: white;

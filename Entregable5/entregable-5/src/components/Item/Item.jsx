@@ -10,10 +10,14 @@ console.log(item.nombre);
         <img src={item.url} alt="item" width = {200} height = {200}/>
       </div>
       <div className = 'details-container'>
-          <h5 className = 'white-text'> {item.nombre} </h5>
+          <h5 className = 'white-text item-title'> {item.nombre} </h5>
+          <p className = 'grey-text'> <i>"{item.description}"</i></p>
           <h6 className = 'white-text'> <strong>{item.precio} USD </strong> </h6>
-          <button id = 'button-cart'> Add to Cart </button>
-          <button id = 'button-wishlist'> Add to Wishlist ❤️ </button>
+          <div>
+            <button id = 'button-cart'> <strong> Add to Cart </strong> </button>
+            <button id = 'button-wishlist'> <strong> Add to Wishlist ❤️ </strong> </button>
+          </div>
+
         </div>
     </div>
   )
