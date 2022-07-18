@@ -15,15 +15,14 @@ const AddToCart = () => {
     }
 
 
-
     return (
         <div>
             This is the AddToCart Component
             <p> Select the number of Items you would like to add to your cart</p>
             <div className = 'div-key-components'>
-                <button className = 'btn btn-info' onClick = {aumentar()}> - </button>
+                <button className = 'btn btn-info' onClick = {disminuir()}> - </button>
                 <p> {itemQuantity} </p>
-                <button className = 'btn btn-info' onClick = {disminuir()}> + </button>
+                <button className = 'btn btn-info' onClick = {aumentar()}> + </button>
             </div>
         </div>
     )

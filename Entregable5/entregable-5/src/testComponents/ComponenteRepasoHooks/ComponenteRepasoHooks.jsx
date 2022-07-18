@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-const ItemListCointainer = ({greeting}) => {
+const ComponenteRepasoHooks = ({greeting}) => {
     const [count, setCount] = useState(0);
     const [bool, setBool] = useState(false);
     // console.log(estado);
@@ -44,4 +44,4 @@ const ItemListCointainer = ({greeting}) => {
   )
 }
 
-export default ItemListCointainer
+export default ComponenteRepasoHooks

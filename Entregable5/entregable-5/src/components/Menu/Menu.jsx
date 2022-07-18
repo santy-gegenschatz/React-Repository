@@ -1,5 +1,6 @@
 import './Menu.css';
 import CartWidget from '../CartWidget/CartWidget';
+import { Link } from 'react-router-dom';
 
 const Menu = function () {
     return (
@@ -30,7 +31,9 @@ const Menu = function () {
           </div>
 
           <div className = 'right'>
-               <CartWidget items = '5'/>
+               <Link to = '/cart'>
+                    <CartWidget items = '5'/>
+               </Link>
           </div> 
         </div>
     );
