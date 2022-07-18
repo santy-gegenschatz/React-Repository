@@ -5,15 +5,20 @@ import Products from './helpers/Products';
 import TestComponent from './components/TestComponent/TestComponent';
 import Item from './components/Item/Item';
 import Footer from './components/Footer/Footer';
+import {BrowserRouter, Routes, Router} from 'react-router-dom'
 
 function App() {
 
   return (
-    <div className="App">
-      <Menu />
-      <ItemList />
-      <Footer />
-    </div>
+    // Envolvemos toda la aplicación con el Browser Router pq podemos llegar a necesitar usarlo
+    // en casi cualquier, por no decir todos, los componentes.
+    <BrowserRouter> 
+      <div className="App">
+        <Menu />
+        <ItemList />
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
