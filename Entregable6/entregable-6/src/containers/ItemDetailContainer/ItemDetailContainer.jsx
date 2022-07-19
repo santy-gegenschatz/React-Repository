@@ -1,19 +1,22 @@
 import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import Products from '../../helpers/Products';
 import ItemDetail from '../../components/ItemDetail/ItemDetail.jsx';
+import './ItemDetailContainer.css';
 
-const ItemDetailContainer = ({productId}) => {
+
+const ItemDetailContainer = () => {
+
+  const {productId} = useParams();
 
   // Lo que vamos a necesitar es un array de productos que llenar mediante un hook de useState
-  const [producto, setProducto] = useState(0);
+  const [product, setProduct] = useState(0);
   
   // Primero hacemos una función que busqué la promesa
   function getItem() {
-    let promesa = Products(2000, true);
-    console.log(promesa);
-    return promesa
+    return Products(true, 2000);
   } 
 
   // Luego, solamente la primera vez que se renderiza el componente llamamos 
@@ -23,19 +26,26 @@ const ItemDetailContainer = ({productId}) => {
   // que aplica una función que busca en el array de productos el id deseado lo terminamos mandando
   // a el componente Item Detail, que resulta ser un child de ItemDetailContainer
   useEffect( () => {
+    console.log(new Date());
     getItem().then( (response) => {
+      console.log(new Date());
       // Dado que cambia un estado se triggerea un re-render
-      let producto = response.find((product) => product.id === productId);
-      setProducto(producto);
+      let product = response.find((product) => product.id === productId);
+      setProduct(product);
     });
   }, []) 
   return (
     <div>
-      ItemDetailContainer
-      {producto === 0 ? 
-      <p className = 'white-text'> Loading...</p>
+      <p className = 'white-text'> Item Detail Container</p>
+      {product === 0 ? 
+      <div> 
+        <p className = 'white-text'> Loading...</p>
+      </div>
       :
-      <ItemDetail item = {producto} />}
+      <div className = 'div-centered'> 
+        <ItemDetail item = {product} />   
+      </div>
+}
     </div>
   )
 }

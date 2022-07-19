@@ -1,0 +1,28 @@
+/* Classes */
+.div-item-detail-container {
+    background-color: red;
+    width: 70%;
+    height: 50%;
+    display: grid;
+    grid-template-rows: 80% 20%;
+    grid-template-columns: 40% 60%;
+    grid-template-areas: 
+    "image text"
+    ". .";
+}
+
+.div-image-container {
+    grid-area: image;
+    background-color: grey;
+}
+
+.div-key-product-info {
+    grid-area: text;
+    background-color: beige;
+}
+
+.image-product {
+    margin: 10%;
+    width: 80%;
+    height: 80%;
+}

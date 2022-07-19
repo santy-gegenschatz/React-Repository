@@ -21,7 +21,7 @@ function App() {
           <Route path = '/' element = {<ItemList />} ></Route>
           <Route path = '/cart' element = {<CartContainer />} ></Route>
           <Route path = '/items' element = {<ItemListContainer />} ></Route>
-          <Route path = '/detalles/:productId' element = {<ItemDetailContainer productId = '1' />}> </Route>
+          <Route path = '/detalles/:productId' element = {<ItemDetailContainer />}> </Route>
           <Route path = '*' element = {<Navigate to = '/' />}></Route>
           {/* Ejemplo lazy loading */}
           {/* <Route path = '/detalle' element = {
