@@ -1,0 +1,23 @@
+.cart-div {
+    border-color: white;
+    border-width: 2px;
+    border-radius: 25px;
+    background-color: #02abc2;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 40px;
+    width: 120px;
+    margin: 10px 15px 5px 0px;
+}
+
+#label-cart {
+    margin: 1px 0px 0px 0px;
+}
+
+#small-image {
+    width: 25px;
+    height:25px;
+    margin: 10px;
+}
