@@ -4,7 +4,6 @@ import './Item.css';
 import { Link } from 'react-router-dom';
 
 const Item = ({item}) => {
-console.log(item.nombre);
   return (
     <div className = 'item-container'>
       <div className = 'image-container'>
@@ -13,7 +12,7 @@ console.log(item.nombre);
         </Link>
       </div>
       <div className = 'details-container'>
-          <Link to = '/detalles'>
+          <Link to = {`/detalles/${item.id}`} >
             <h5 className = 'white-text item-title'> {item.nombre} </h5>
           </Link>
           <p className = 'grey-text'> <i>"{item.description}"</i></p>

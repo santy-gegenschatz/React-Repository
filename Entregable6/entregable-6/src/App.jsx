@@ -7,8 +7,7 @@ import CartContainer from './containers/CartContainer/CartContainer';
 import ItemListContainer from './containers/ItemListContainer/ItemListContainer.jsx';
 import { Navigate } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-
-const ItemDetailContainer = lazy(() => import ('./containers/ItemDetailContainer/ItemDetailContainer'));
+import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
 
@@ -22,12 +21,14 @@ function App() {
           <Route path = '/' element = {<ItemList />} ></Route>
           <Route path = '/cart' element = {<CartContainer />} ></Route>
           <Route path = '/items' element = {<ItemListContainer />} ></Route>
-          <Route path = 'detalle' element = {
+          <Route path = '/detalles/:productId' element = {<ItemDetailContainer productId = '1' />}> </Route>
+          <Route path = '*' element = {<Navigate to = '/' />}></Route>
+          {/* Ejemplo lazy loading */}
+          {/* <Route path = '/detalle' element = {
             <Suspense fallback = {<div> Cargando ...</div>}>
               <ItemDetailContainer />
             </ Suspense>
-          }></Route>
-          <Route path = '*' element = {<Navigate to = '/' />}></Route>
+          }></Route> */}
         </Routes>
         <Footer />
       </div>

@@ -20,7 +20,7 @@ const ItemDetail = ({item}) => {
             </div>
 
             <div className = 'div-add-to-cart'>
-                <AddToCart />
+                {/* <AddToCart /> */}
             </div>
         </div>
         ItemDetail
