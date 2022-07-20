@@ -13,10 +13,10 @@ const Item = ({item}) => {
       </div>
       <div className = 'details-container'>
           <Link to = {`/detalles/${item.id}`} >
-            <h5 className = 'white-text item-title'> {item.nombre} </h5>
+            <h5 className = 'white-text item-title'> {item.name} </h5>
           </Link>
           <p className = 'grey-text'> <i>"{item.description}"</i></p>
-          <h6 className = 'white-text'> <strong>{item.precio} USD </strong> </h6>
+          <h6 className = 'white-text'> <strong>{item.price} USD </strong> </h6>
           <div>
             <button id = 'button-cart'> <strong> Add to Cart </strong> </button>
             <button id = 'button-wishlist'> <strong> Add to Wishlist ❤️ </strong> </button>

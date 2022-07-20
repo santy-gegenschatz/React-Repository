@@ -1,8 +1,8 @@
-let p1 = {id : "1", nombre: 'Basic Black T-Shirt', precio : 15, stock : 10, brand : 'The Winter Store Apparel Company',description : '100% Hand Woven Cotton', url : 'https://static.dafiti.com.ar/p/topper-6959-873019-1-zoom.jpg'}
-let p2 = {id : "2", nombre: 'Extra-Denim Jean', precio : 40, stock : 6, brand : 'The Winter Store Apparel Company', description : 'Classic, yet stylish', url : 'https://http2.mlstatic.com/D_NQ_NP_663600-MLA43732813599_102020-W.jpg'}
-let p3 = {id : "3", nombre: 'Regular White Shirt', precio : 25, stock : 20, brand : 'The Winter Store Apparel Company', description : 'Ideal for Business Meetings',url : 'https://i.ebayimg.com/thumbs/images/g/c0EAAOSwXTVid0C0/s-l300.jpg'}
-let p4 = {id : "4", nombre: 'OutRider Jacket', precio : 75, stock : 12, brand : 'The Winter Store Apparel Company', description : 'Take warmth with you', url : 'https://http2.mlstatic.com/D_NQ_NP_643633-MLA31351644651_072019-O.jpg'}
-let p5 = {id : "5", nombre: 'Bear Market Cap', precio : 12, stock : 3, brand : 'The Winter Store Apparel Company', description : 'Is the bear market over?', url : 'https://http2.mlstatic.com/D_NQ_NP_2X_866308-MLM49983765519_052022-F.jpg'}
+let p1 = {id : "1", name: 'Basic Black T-Shirt', price : 15, stock : 10, brand : 'The Winter Store Apparel Company',description : '100% Hand Woven Cotton', url : 'https://static.dafiti.com.ar/p/topper-6959-873019-1-zoom.jpg'}
+let p2 = {id : "2", name: 'Extra-Denim Jean', price : 40, stock : 6, brand : 'The Winter Store Apparel Company', description : 'Classic, yet stylish', url : 'https://http2.mlstatic.com/D_NQ_NP_663600-MLA43732813599_102020-W.jpg'}
+let p3 = {id : "3", name: 'Regular White Shirt', price : 25, stock : 20, brand : 'The Winter Store Apparel Company', description : 'Ideal for Business Meetings',url : 'https://i.ebayimg.com/thumbs/images/g/c0EAAOSwXTVid0C0/s-l300.jpg'}
+let p4 = {id : "4", name: 'OutRider Jacket', price : 75, stock : 12, brand : 'The Winter Store Apparel Company', description : 'Take warmth with you', url : 'https://http2.mlstatic.com/D_NQ_NP_643633-MLA31351644651_072019-O.jpg'}
+let p5 = {id : "5", name: 'Bear Market Cap', price : 12, stock : 3, brand : 'The Winter Store Apparel Company', description : 'Is the bear market over?', url : 'https://http2.mlstatic.com/D_NQ_NP_2X_866308-MLM49983765519_052022-F.jpg'}
 
 let products = [];
 products.push(p1);
