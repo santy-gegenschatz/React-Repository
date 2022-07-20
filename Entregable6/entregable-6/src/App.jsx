@@ -17,10 +17,11 @@ function App() {
       <div className="App">
         <Menu />
         <Routes>
-          <Route path = '/' element = {<ItemListContainer />} ></Route>
-          <Route path = '/cart' element = {<CartContainer />} ></Route>
-          <Route path = '/items' element = {<ItemListContainer />} ></Route>
-          <Route path = '/items/:productId' element = {<ItemDetailContainer />}> </Route>
+          <Route path = '/' element = {<ItemListContainer />} > </Route>
+          <Route path = '/cart' element = {<CartContainer />} > </Route>
+          <Route path = '/items' element = {<ItemListContainer />} > </Route>
+          <Route path = '/items/:productId' element = {<ItemDetailContainer />} > </Route>
+          <Route path = '/newSeason' element = {<ItemDetailContainer />} />
           <Route path = '*' element = {<Navigate to = '/' />}></Route>
           {/* Ejemplo lazy loading */}
           {/* <Route path = '/detalle' element = {

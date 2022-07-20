@@ -2,8 +2,10 @@ import React from 'react'
 import ItemList from '../../components/ItemList/ItemList'
 import Products from '../../helpers/Products';
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
+    const categoria = useParams();
     let [productos, setProductos] = useState([]);
 
     useEffect(() => {
