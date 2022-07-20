@@ -1,15 +1,30 @@
 import React from 'react'
-import './ItemListContainer.css'
+import ItemList from '../../components/ItemList/ItemList'
+import Products from '../../helpers/Products';
+import { useState, useEffect } from 'react';
 
-const ItemListContainer = ({greeting}) => {
-  return (
-    <div className = 'div-principal'>
-        <div className = 'div-secundario'>
-            <p> Este es un componente contenedor que muestra un saludo que llega por un prop. </p>
-            <p> {greeting} </p>
+const ItemListContainer = () => {
+    let [productos, setProductos] = useState([]);
+
+    useEffect(() => {
+        let promesa = Products(true, 2000);
+        promesa.then( (response) => {
+        setProductos(response);
+        });
+    }, [])
+    
+    return (
+        <div>
+            <p className = 'white-text'> This is an Item List Container </p>
+            {productos.length === 0 ? 
+            <p> Loading ...</p>    
+            :
+            <div className = 'div-centered'>
+                <ItemList items = {productos}/> 
+            </div>
+        }
         </div>
-    </div>
-  )
-}
+    )
+    }
 
 export default ItemListContainer

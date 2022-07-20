@@ -17,12 +17,12 @@ const ItemDetail = ({item}) => {
             <div className = 'div-product-details'>
                 <p> {item.description} </p>
                 <p className = 'price-text'> {item.price} USD </p>
-                <button className = 'btn btn-success'> Buy Now</button>
+                <div className = 'div-add-to-cart'>
+                    <AddToCart />
+                </div>
             </div>
 
-            <div className = 'div-add-to-cart'>
-                <AddToCart />
-            </div>
+
         </div>
     </div>
   )

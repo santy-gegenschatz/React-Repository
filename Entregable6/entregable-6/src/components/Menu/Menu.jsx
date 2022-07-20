@@ -31,9 +31,7 @@ const Menu = function () {
           </div>
 
           <div className = 'right'>
-               <Link to = '/cart'>
-                    <CartWidget items = '5'/>
-               </Link>
+               <CartWidget items = '5'/>
           </div> 
         </div>
     );

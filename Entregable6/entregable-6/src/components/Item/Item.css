@@ -22,6 +22,9 @@
     color: lightgrey;
 }
 
+.no-under-link {
+    text-decoration: none;
+}
 .white-text {
     color: white;
 }

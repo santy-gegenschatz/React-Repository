@@ -1,12 +1,11 @@
-import Menu from './components/Menu/Menu';
 import './App.css';
-import ItemList from './components/ItemList/ItemList';
-import Footer from './components/Footer/Footer';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import CartContainer from './containers/CartContainer/CartContainer';
-import ItemListContainer from './containers/ItemListContainer/ItemListContainer.jsx';
 import { Navigate } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
+import Menu from './components/Menu/Menu';
+import Footer from './components/Footer/Footer';
+import CartContainer from './containers/CartContainer/CartContainer';
+import ItemListContainer from './containers/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
@@ -18,10 +17,10 @@ function App() {
       <div className="App">
         <Menu />
         <Routes>
-          <Route path = '/' element = {<ItemList />} ></Route>
+          <Route path = '/' element = {<ItemListContainer />} ></Route>
           <Route path = '/cart' element = {<CartContainer />} ></Route>
           <Route path = '/items' element = {<ItemListContainer />} ></Route>
-          <Route path = '/detalles/:productId' element = {<ItemDetailContainer />}> </Route>
+          <Route path = '/items/:productId' element = {<ItemDetailContainer />}> </Route>
           <Route path = '*' element = {<Navigate to = '/' />}></Route>
           {/* Ejemplo lazy loading */}
           {/* <Route path = '/detalle' element = {
