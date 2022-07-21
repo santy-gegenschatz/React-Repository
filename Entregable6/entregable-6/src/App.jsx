@@ -19,9 +19,9 @@ function App() {
         <Routes>
           <Route path = '/' element = {<ItemListContainer />} > </Route>
           <Route path = '/cart' element = {<CartContainer />} > </Route>
-          <Route path = '/items' element = {<ItemListContainer />} > </Route>
+          <Route path = '/items/:categoryId' element = {<ItemListContainer />} > </Route>
           <Route path = '/items/:productId' element = {<ItemDetailContainer />} > </Route>
-          <Route path = '/newSeason' element = {<ItemDetailContainer />} />
+          <Route path = '/newSeason' element = {<ItemListContainer />} />
           <Route path = '*' element = {<Navigate to = '/' />}></Route>
           {/* Ejemplo lazy loading */}
           {/* <Route path = '/detalle' element = {

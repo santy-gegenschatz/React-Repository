@@ -11,6 +11,8 @@ const ItemDetailContainer = () => {
 
   const {productId} = useParams();
 
+  console.log(`La categoría es: ${productId}`);
+
   // Lo que vamos a necesitar es un array de productos que llenar mediante un hook de useState
   const [product, setProduct] = useState(0);
   
@@ -28,7 +30,6 @@ const ItemDetailContainer = () => {
   useEffect( () => {
     console.log(new Date());
     getItem().then( (response) => {
-      console.log(new Date());
       // Dado que cambia un estado se triggerea un re-render
       let product = response.find((product) => product.id === productId);
       setProduct(product);

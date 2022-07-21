@@ -13,11 +13,11 @@ const Menu = function () {
                     </li>
 
                     <li>
-                         <a href = "/inicio"> New Season </a>
+                         <a href = "/newSeason"> New Season </a>
                     </li>
 
                     <li>
-                         <a href = "/inicio"> Products </a>
+                         <a href = "/cart"> Products </a>
                     </li>
 
                     <li>
