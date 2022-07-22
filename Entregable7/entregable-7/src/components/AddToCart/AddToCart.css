@@ -1,0 +1,29 @@
+.btn-buy {
+    margin: 5px;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.div-general {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: lightgrey;
+}
+
+.div-key-components {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-counter-label {
+    margin: 2px 0px 0px 0px;
+}

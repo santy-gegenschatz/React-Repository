@@ -1,0 +1,9 @@
+.div-centered {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.white-text {
+    color: white;
+}
