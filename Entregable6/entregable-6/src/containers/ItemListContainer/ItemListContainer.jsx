@@ -17,7 +17,8 @@ const ItemListContainer = () => {
         switch (pathname) {
             case ('/'):
                 return productsArray
-            case('/categories'):
+            case('/categories/' + categoryId):
+            console.log("I am in");
                 productsToShow = productsArray.filter( (item) => item.category === categoryId);
                 return productsToShow
             case ('/newSeason'):
