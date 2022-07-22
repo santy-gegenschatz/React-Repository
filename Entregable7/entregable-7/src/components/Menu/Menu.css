@@ -1,36 +1,6 @@
-.div-menu {
-    background-color: black;
-    text-align: center;
-    display: grid;
-    grid-template-columns: 20% 60% 20%;
-    grid-template-rows: 100%;
-    grid-template-areas: "left center right";
-    margin: 0px;
-}
-
-.center {
-    grid-area: center;
-}
-
-.right {
-    grid-area: right;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-}
-
 h1 {
     color: white;
-    margin: 10px 0px 10px 0px;
-}
-
-ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-inline-start: 0px;
-    margin: 10px 0px 10px 0px;
+    margin: 5px 0px 5px 0px;
 }
 
 li {
@@ -42,4 +12,64 @@ li {
 li a {
     color: white;
     text-decoration: none;
+}
+
+.categories-menu {
+    grid-area: center-bottom;
+    padding: 0px;
+    background-color: black;
+}
+
+.categories-menu ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding-inline-start: 0px;
+    margin: 1px 0px 1px 0px;
+}
+
+.div-menu {
+    background-color: black;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 110px 50px;
+    grid-template-areas: 
+    "left center-top right"
+    "left center-bottom .";
+    margin: 0px;
+    padding: 0px;
+}
+
+.right {
+    grid-area: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: black;
+}
+
+.superior-menu {
+    grid-area: center-top;
+    background-color: black;
+    padding: 5px;
+    margin: 0px;
+}
+
+.superior-menu ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-inline-start: 0px;
+    margin: 5px 0px 5px 0px;
+}
+
+
+/* Id´s */
+
+#link-products:hover {
+    color: blue;
+    cursor: pointer;
 }
