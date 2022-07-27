@@ -4,20 +4,18 @@ import './AddToCart.css'
 
 const AddToCart = ({onAdd}) => {
 
-    const [itemQuantity, setItemQuantity] = useState(0);
+    const [itemQuantity, setItemQuantity] = useState(1);
 
     function aumentar() {
-        if (itemQuantity <100) {
+        if (itemQuantity < 100) {
             setItemQuantity( itemQuantity + 1);
         }
-        
     }
 
     function disminuir() {
-        if (itemQuantity >0) {
+        if (itemQuantity > 1) {
             setItemQuantity( itemQuantity - 1);
         }
-        
     }
 
     return (
@@ -31,7 +29,7 @@ const AddToCart = ({onAdd}) => {
                 </div>
                 <button className = 'btn btn-primary' onClick = {aumentar}> + </button>
             </div>
-            <button className = 'btn btn-primary w-75 btn-buy' onClick={onAdd}> Buy Now </button>
+            <button className = 'btn btn-primary w-75 btn-buy' onClick = { (event, itemQuantity) => { onAdd(event, itemQuantity) } } > Buy Now </button>
             <button className = 'btn btn-info w-75 btn-buy'> Add to Wishlist </button>
         </div>
     )

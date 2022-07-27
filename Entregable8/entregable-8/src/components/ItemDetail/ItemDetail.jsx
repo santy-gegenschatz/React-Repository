@@ -7,8 +7,9 @@ import './ItemDetail.css'
 const ItemDetail = ({item}) => {
     const [purchase, setPurchase] = useState(false);
 
-    const clickEnCompra = (event) => {
+    const clickEnCompra = (event, itemsBought) => {
         console.log(event);
+        console.log(itemsBought);
         setPurchase(true);
     }
   return (
@@ -28,7 +29,7 @@ const ItemDetail = ({item}) => {
                 {!purchase ?
                     <div className = 'div-add-to-cart'>
                         {/* Lo interesante es que le estoy pasando una función por prop */}
-                        <AddToCart onAdd={clickEnCompra}/>
+                        <AddToCart onAdd = {clickEnCompra}/>
                     </div>
                 :
                     <div className = 'div-go-to-cart'> 
