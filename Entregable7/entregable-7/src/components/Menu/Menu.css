@@ -18,6 +18,9 @@ li a {
     grid-area: center-bottom;
     padding: 0px;
     background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .categories-menu ul {
@@ -66,6 +69,11 @@ li a {
     margin: 5px 0px 5px 0px;
 }
 
+.ul-container {
+    background-color: white;
+    width: 400px;
+    border-radius: 25px;
+}
 
 /* Id´s */
 
