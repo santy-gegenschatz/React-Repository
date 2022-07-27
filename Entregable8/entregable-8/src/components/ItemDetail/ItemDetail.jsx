@@ -3,6 +3,9 @@ import AddToCart from '../AddToCart/AddToCart'
 import './ItemDetail.css'
 
 const ItemDetail = ({item}) => {
+    const clickEnCompra = (event) => {
+        console.log(event);
+    }
   return (
     <div className = 'div-item-detail-container'>
         <div className = 'div-image-container'>
@@ -18,7 +21,8 @@ const ItemDetail = ({item}) => {
                 <p> {item.description} </p>
                 <p className = 'price-text'> {item.price} USD </p>
                 <div className = 'div-add-to-cart'>
-                    <AddToCart />
+                    {/* Lo interesante es que le estoy pasando una función por prop */}
+                    <AddToCart onAdd={clickEnCompra}/>
                 </div>
             </div>
 

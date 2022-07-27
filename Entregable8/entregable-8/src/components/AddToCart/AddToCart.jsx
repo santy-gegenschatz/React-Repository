@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import './AddToCart.css'
 
-const AddToCart = () => {
+const AddToCart = ({onAdd}) => {
 
     const [itemQuantity, setItemQuantity] = useState(0);
 
@@ -31,7 +31,7 @@ const AddToCart = () => {
                 </div>
                 <button className = 'btn btn-primary' onClick = {aumentar}> + </button>
             </div>
-            <button className = 'btn btn-primary w-75 btn-buy'> Buy Now </button>
+            <button className = 'btn btn-primary w-75 btn-buy' onClick={onAdd}> Buy Now </button>
             <button className = 'btn btn-info w-75 btn-buy'> Add to Wishlist </button>
         </div>
     )
