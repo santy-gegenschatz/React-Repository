@@ -1,10 +1,15 @@
 import React from 'react'
+import { useState } from 'react'
 import AddToCart from '../AddToCart/AddToCart'
+import GoToCart from '../GoToCart/GoToCart.jsx'
 import './ItemDetail.css'
 
 const ItemDetail = ({item}) => {
+    const [purchase, setPurchase] = useState(false);
+
     const clickEnCompra = (event) => {
         console.log(event);
+        setPurchase(true);
     }
   return (
     <div className = 'div-item-detail-container'>
@@ -20,10 +25,17 @@ const ItemDetail = ({item}) => {
             <div className = 'div-product-details'>
                 <p> {item.description} </p>
                 <p className = 'price-text'> {item.price} USD </p>
-                <div className = 'div-add-to-cart'>
-                    {/* Lo interesante es que le estoy pasando una función por prop */}
-                    <AddToCart onAdd={clickEnCompra}/>
-                </div>
+                {!purchase ?
+                    <div className = 'div-add-to-cart'>
+                        {/* Lo interesante es que le estoy pasando una función por prop */}
+                        <AddToCart onAdd={clickEnCompra}/>
+                    </div>
+                :
+                    <div className = 'div-go-to-cart'> 
+                        <GoToCart />
+                    </div>
+                }
+
             </div>
 
 
