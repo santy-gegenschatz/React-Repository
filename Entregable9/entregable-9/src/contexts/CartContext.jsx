@@ -10,6 +10,17 @@ export const CartContext = createContext([]);
 const CartContextProvider = ({children}) => {
     //Definir los estados y las funciones
     const [cartList, setCartList] = useState([]);
+    const [itemCount, setItemCount] = useState(0);
+
+    const calculateTotalItems = () => {
+        let counter = 0;
+        cartList.forEach(element => {
+            console.log("Element" , element);
+          counter += element.itemQuantity;
+        });
+        setItemCount(counter);
+        console.log("Counter : ", counter);
+      }
     
     const añadirCarrito = (product) => {
         let productoExistente = false;
@@ -31,13 +42,17 @@ const CartContextProvider = ({children}) => {
             console.log(typeof existingProduct.itemQuantity);
             existingProduct.itemQuantity = existingProduct.itemQuantity + product.itemQuantity;            
         } else {
+            console.log("El producto no está añadido al array");
             setCartList([...cartList, product]);
+            console.log(cartList);
         }
+        calculateTotalItems();
     }
         
     return (
         <CartContext.Provider value = {{
             cartList,
+            itemCount,
             añadirCarrito
         }}>
             {children}
