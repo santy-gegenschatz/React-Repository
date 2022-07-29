@@ -9,14 +9,11 @@ const ItemDetail = ({item}) => {
     const [purchase, setPurchase] = useState(false);
     
     const {cartList, añadirCarrito} = useContext(CartContext);
-    
-    console.log(cartList, añadirCarrito);
+
     const clickEnCompra = (itemQuantity) => {
         console.log(itemQuantity);
-        console.log(cartList);
-        añadirCarrito(item, itemQuantity)
-        console.log(cartList);
-        setPurchase(true);
+        añadirCarrito({...item, cantidad : itemQuantity})
+        //setPurchase(true);
     }
   return (
     <div className = 'div-item-detail-container'>

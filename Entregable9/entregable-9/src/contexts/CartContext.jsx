@@ -12,11 +12,17 @@ const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([]);
     
     const añadirCarrito = (product) => {
-        console.log("1", cartList);
-
-        setCartList([product]);
+        console.log(product);
+        console.log(product.id);
+        if (cartList.includes( (prod) => prod.id === product.id)) {
+            console.log("A");
+            let quantity = cartList.find((prod) => prod.id === product.id);
+            quantity.cantidad = quantity.cantidad + product.cantidad;
+        } else {
+            setCartList([...cartList, product]);
+        }
         
-        console.log("2", product);
+        console.log(cartList);
     }
         
     return (
