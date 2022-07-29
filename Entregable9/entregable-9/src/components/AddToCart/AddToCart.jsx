@@ -29,7 +29,7 @@ const AddToCart = ({onAdd}) => {
                 </div>
                 <button className = 'btn btn-primary' onClick = {aumentar}> + </button>
             </div>
-            <button className = 'btn btn-primary w-75 btn-buy' onClick = { (event, itemQuantity) => { onAdd(event, itemQuantity) } } > Buy Now </button>
+            <button className = 'btn btn-primary w-75 btn-buy' onClick = {() => onAdd({itemQuantity})} > Buy Now </button>
             <button className = 'btn btn-info w-75 btn-buy'> Add to Wishlist </button>
         </div>
     )

@@ -1,15 +1,21 @@
-import React from 'react'
-import { useState } from 'react'
+import './ItemDetail.css'
+import React, { useContext } from 'react'
 import AddToCart from '../AddToCart/AddToCart'
 import GoToCart from '../GoToCart/GoToCart.jsx'
-import './ItemDetail.css'
+import { useState } from 'react'
+import {CartContext, useCartContext}  from '../../contexts/CartContext'
 
 const ItemDetail = ({item}) => {
     const [purchase, setPurchase] = useState(false);
-
-    const clickEnCompra = (event, itemsBought) => {
-        console.log(event);
-        console.log(itemsBought);
+    
+    const {cartList, añadirCarrito} = useContext(CartContext);
+    
+    console.log(cartList, añadirCarrito);
+    const clickEnCompra = (itemQuantity) => {
+        console.log(itemQuantity);
+        console.log(cartList);
+        añadirCarrito(item, itemQuantity)
+        console.log(cartList);
         setPurchase(true);
     }
   return (
