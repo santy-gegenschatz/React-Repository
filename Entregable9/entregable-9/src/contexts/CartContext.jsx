@@ -1,6 +1,6 @@
-import { useContext } from "react";
 import { useState } from "react";
 import { createContext } from "react";
+import {flushSync} from "react-dom";
 
 // Notar que el carrito de compras va a ser un array con objetos de tipo producto adentro
 // cada objeto además va a tener una variable que representa la cantidad de items de ese tipo
@@ -11,12 +11,13 @@ const CartContextProvider = ({children}) => {
     //Definir los estados y las funciones
     const [cartList, setCartList] = useState([]);
     const [itemCount, setItemCount] = useState(0);
+    const [firstProduct, setFirstProduct] = useState(true);
 
     const calculateTotalItems = () => {
         let counter = 0;
         cartList.forEach(element => {
-            console.log("Element" , element);
-          counter += element.itemQuantity;
+        console.log("Element" , element);
+        counter += element.itemQuantity;
         });
         setItemCount(counter);
         console.log("Counter : ", counter);
@@ -37,16 +38,24 @@ const CartContextProvider = ({children}) => {
             console.log(product);
             console.log("El producto encontrado en el array");
             console.log(existingProduct);
-            console.log("La cantidad");
-            console.log(typeof product.itemQuantity);
-            console.log(typeof existingProduct.itemQuantity);
+            console.log("La cantidad actual", existingProduct.itemQuantity);
+            console.log("La cantidad recibida", product.itemQuantity);
             existingProduct.itemQuantity = existingProduct.itemQuantity + product.itemQuantity;            
+            console.log("La cantidad actualizada : ", existingProduct.itemQuantity);
+            calculateTotalItems();
         } else {
-            console.log("El producto no está añadido al array");
-            setCartList([...cartList, product]);
-            console.log(cartList);
+            if (firstProduct) {
+                setItemCount(product.itemQuantity);
+                setCartList([...cartList, product]);
+                setFirstProduct(false);
+                console.log("New product, empty array");
+            } else {
+                setCartList([...cartList, product]);
+                setItemCount(itemCount + product.itemQuantity);
+                console.log("New product, full array");
+            }
         }
-        calculateTotalItems();
+        
     }
         
     return (
