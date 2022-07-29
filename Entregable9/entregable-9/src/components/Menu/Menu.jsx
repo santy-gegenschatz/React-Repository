@@ -20,7 +20,7 @@ const Menu = function () {
                <div id = 'div1'>
                     <div id = 'div2'>
                          <ul>
-                              <li> <a href = "/inicio"> Home </a> </li>
+                              <li> <Link to = '7'> Home </Link> </li>
 
                               <li>
                                    <a href = "/newSeason"> New Season </a>

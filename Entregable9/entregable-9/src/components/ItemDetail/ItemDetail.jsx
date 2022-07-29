@@ -13,7 +13,7 @@ const ItemDetail = ({item}) => {
     const clickEnCompra = (itemQuantity) => {
         console.log(itemQuantity);
         añadirCarrito({...item, itemQuantity})
-        //setPurchase(true);
+        setPurchase(true);
     }
   return (
     <div className = 'div-item-detail-container'>

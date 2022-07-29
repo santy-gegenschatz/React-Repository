@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
 import { useState } from 'react';
+import { useEffect } from 'react';
 const image = require('./cart-image.png');
 
 
 const CartWidget = () => {
   const {cartList} = useContext(CartContext);
-  const [cart, SetCart] = useState(cartList);
   const [itemCount, setItemCount] = useState(0);
   const calculateTotalItems = () => {
     let counter = 0;
@@ -18,11 +18,17 @@ const CartWidget = () => {
     });
     setItemCount(counter);
   }
+  // Vamos a probar resovler el problema con un hook
+  useEffect( () => {
+    console.log("Sth happened");
+    calculateTotalItems();
+    console.log(itemCount);
+  }, [cartList])
   return (
     <div>
-      {console.log("rendering", cart.length)}
+      {console.log("rendering", cartList.length)}
       <Link to = '/cart' className = 'no-under-link-black'>
-        {cart.length === 0 ?
+        {itemCount === 0 ?
         <div className = 'cart-div-without-items'> 
             <img src={ image } alt="cart" id = 'small-image'/>
             <p id = "label-cart"> Cart </p>
@@ -30,7 +36,7 @@ const CartWidget = () => {
         :
         <div className='cart-div-with-items'>
             <img src={ image } alt="cart" id = 'small-image'/>
-            <p id = "label-cart"> Cart {`(${cart.length})`}</p>
+            <p id = "label-cart"> Cart {`(${itemCount})`}</p>
         </div>
         }
 
