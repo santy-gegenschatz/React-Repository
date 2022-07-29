@@ -9,10 +9,10 @@ const ItemDetail = ({item}) => {
     const [purchase, setPurchase] = useState(false);
     
     const {cartList, añadirCarrito} = useContext(CartContext);
-
+    console.log(cartList);
     const clickEnCompra = (itemQuantity) => {
         console.log(itemQuantity);
-        añadirCarrito({...item, cantidad : itemQuantity})
+        añadirCarrito({...item, itemQuantity})
         //setPurchase(true);
     }
   return (
