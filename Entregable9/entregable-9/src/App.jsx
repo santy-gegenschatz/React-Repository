@@ -8,6 +8,7 @@ import CartContainer from './containers/CartContainer/CartContainer';
 import ItemListContainer from './containers/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
 import CartContextProvider from './contexts/CartContext';
+import TestContext from './contexts/TestContext';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
               </ Suspense>
             }></Route> */}
           </Routes>
+          <TestContext> </TestContext>
           <Footer />
         </div>
       </BrowserRouter>

@@ -6,7 +6,6 @@ import {CartContext}  from '../../contexts/CartContext'
 
 const ItemDetail = ({item}) => {
     const [purchase, setPurchase] = useState(false);
-    
     const {cartList, añadirCarrito} = useContext(CartContext);
     const clickEnCompra = (itemQuantity) => {
         añadirCarrito({...item, itemQuantity})
