@@ -6,7 +6,7 @@ const TestContext = () => {
     console.log(newContext);
     return (
     <div>
-        Hello
+        Hello World
     </div>)
 }
 
