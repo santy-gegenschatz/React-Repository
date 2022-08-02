@@ -4,18 +4,7 @@ import { CartContext } from '../../contexts/CartContext';
 import './CartContainer.css';
 
 const CartContainer = () => {
-  const {cartList, totalValue} = useContext(CartContext);
-  const buyer = {
-    name : 'John',
-    email : 'john@doe.com',
-    phone : '002145843354'  
-  }
-  const purchse = {
-    buyer : buyer,
-    item : cartList,
-    total : totalValue
-  }
-
+  const {cartList} = useContext(CartContext);
   return (
     <div className = 'div-main'>
         This is the CartContainer element 2
@@ -24,7 +13,6 @@ const CartContainer = () => {
             return <li key = {prod.id}> {`Producto : ${prod.name}, Cantidad : ${prod.itemQuantity}`}</li>
           })
         }
-
     </div>
   )
 }
