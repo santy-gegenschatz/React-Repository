@@ -9,9 +9,12 @@ import ItemListContainer from './containers/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
 import CartContextProvider from './contexts/CartContext';
 import TestContext from './contexts/TestContext';
+import { createContext } from 'react';
 
+const Contexto = createContext([]);
 function App() {
 
+  console.log(Contexto);
   return (
     // Antes del BrowserRouter, que tmabién es un contexto vamos a envolver toda la aplicación en el contexto que creamos en la carpeta contexts.
     // Envolvemos toda la aplicación con el Browser Router pq podemos llegar a necesitar usarlo en casi cualquier, por no decir todos, los componentes.

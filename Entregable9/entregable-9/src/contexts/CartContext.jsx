@@ -57,12 +57,21 @@ const CartContextProvider = ({children}) => {
         }
         
     }
+
+    const totalValue = () => {
+        let total = 0;
+        cartList.forEach ((prod) => {
+            total += prod.price;
+        })
+        return total;
+    }
         
     return (
         <CartContext.Provider value = {{
             cartList,
             itemCount,
-            añadirCarrito
+            añadirCarrito,
+            totalValue
         }}>
             {children}
         </CartContext.Provider>
