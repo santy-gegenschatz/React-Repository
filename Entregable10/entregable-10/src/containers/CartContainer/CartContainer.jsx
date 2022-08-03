@@ -11,7 +11,6 @@ const CartContainer = () => {
 
   const {cartList, cartIsEmpty} = useContext(CartContext);
   const [loadedCart, setLoadedCart] = useState(false);
-  const [cartIsEmptyVar, setCartIsEmptyVar] = useState(cartIsEmpty);
 
   const getProducts = (delay) => {
     let promise = new Promise ((resolve, reject) => {
@@ -23,15 +22,22 @@ const CartContainer = () => {
   }
 
   useEffect(() => {
-    getProducts(1000)
-    .then( (resp) => {
-      setLoadedCart(resp);
-    })
+    console.log("Verifying");
+    if (cartIsEmpty()) {
+      setLoadedCart(false);
+    } else {
+      console.log("Starting");
+      getProducts(1000)
+      .then( (resp) => {
+        setLoadedCart(resp);
+        console.log("Changing");
+      })      
+    }
   }, [])
 
   return (
     <div>
-      {cartIsEmptyVar ? 
+      {cartIsEmpty() ? 
       <div className = 'div-main-CartContainer'> 
         <p id = 'white-text'> The Cart is Empty. Why don't you check out our awesome products 🤛</p>
         <button className = 'btn btn-success' id = 'btn-store'>
@@ -42,6 +48,7 @@ const CartContainer = () => {
       </div>
       :
         <div>
+          {console.log(loadedCart)}
           {!loadedCart ?
           <div> Loading the cart items...</div>
           :
