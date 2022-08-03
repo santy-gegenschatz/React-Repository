@@ -32,10 +32,10 @@ const CartContainer = () => {
   return (
     <div>
       {cartIsEmptyVar ? 
-      <div> 
+      <div className = 'div-main-CartContainer'> 
         <p id = 'white-text'> The Cart is Empty. Why don't you check out our awesome products 🤛</p>
-        <button className = 'btn btn-info' id = 'btn-store'>
-          <Link to = '/'>
+        <button className = 'btn btn-success' id = 'btn-store'>
+          <Link to = '/' id = 'modified-link'>
             Go To The Store
           </Link>
         </button>
