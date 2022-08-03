@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 // Nunca olvidar importar el css
 import './Item.css';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../contexts/CartContext';
 
 const Item = ({item}) => {
+  const { addToCart } = useContext(CartContext);
+  const objectForCart = {...item, itemQuantity : 1}
   return (
     <div className = 'item-container'>
       <div className = 'image-container'>
@@ -18,7 +21,7 @@ const Item = ({item}) => {
           <p className = 'grey-text'> <i>"{item.description}"</i></p>
           <h6 className = 'white-text'> <strong>{item.price} USD </strong> </h6>
           <div>
-            <button id = 'button-cart'> <strong> Add to Cart </strong> </button>
+            <button id = 'button-cart' onClick = {() => addToCart(objectForCart)}> <strong> Add to Cart </strong> </button>
             <button id = 'button-wishlist'> <strong> Add to Wishlist ❤️ </strong> </button>
           </div>
 
