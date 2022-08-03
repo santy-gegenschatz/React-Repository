@@ -8,7 +8,7 @@ const CartItem = ({item}) => {
   return (
     <div className = 'div-main2'> 
         <div className = 'div-photo'>
-            <img src={item.url} alt="product" width = {150} height = {130}/>
+            <img src={item.url} alt="product" width = {150} height = {150} id = 'cartItem-image'/>
         </div>
 
         <div className = 'div-details'>
@@ -18,7 +18,7 @@ const CartItem = ({item}) => {
             <p id = 'special-paragraph'> {`Quantity : ${item.itemQuantity}`} </p> 
         </div>
         
-        <div className = 'div-button'>
+        <div className = 'div-button-cartItem'>
             <button className = 'btn btn-info' onClick = {() => removeItem(item)}> Remove Item</button>
         </div>
     </div>
