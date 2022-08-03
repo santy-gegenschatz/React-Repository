@@ -4,7 +4,8 @@ import CartItem from '../CartItem/CartItem'
 import './Cart.css'
 
 const Cart = ({items}) => {
-  const {emptyCart} = useContext(CartContext);
+  const {emptyCart, calculateTotalCartValue} = useContext(CartContext);
+  console.log(calculateTotalCartValue);
 
   return (
     <div className = 'div-main3'>
@@ -13,6 +14,10 @@ const Cart = ({items}) => {
                 console.log(item);
                 return ( <CartItem item = {item}/> )
             })}
+        </div>
+
+        <div className = 'div-total'>
+            <h5> Total : {calculateTotalCartValue()}</h5>
         </div>
         <div className = 'div-button'>
             <button className = 'btn btn-info' onClick = {() => emptyCart()}> Empty Cart </button>

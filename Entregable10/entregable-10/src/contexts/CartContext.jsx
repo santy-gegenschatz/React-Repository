@@ -64,10 +64,25 @@ const CartContextProvider = ({children}) => {
         setCartList([]);
     }
 
-    const totalValue = () => {
+    const cartIsEmpty = () => {
+        if (itemCount == 0) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    const removeItem = (item) => {
+        const index = cartList.indexOf(item);
+        console.log(index);
+        cartList.splice(index, 1);
+        calculateTotalItems();
+    }
+
+    const calculateTotalCartValue = () => {
         let total = 0;
         cartList.forEach ((prod) => {
-            total += prod.price;
+            total += prod.price*prod.itemQuantity;
         })
         return total;
     }
@@ -78,7 +93,9 @@ const CartContextProvider = ({children}) => {
             itemCount,
             addToCart,
             emptyCart,
-            totalValue
+            cartIsEmpty,
+            removeItem,
+            calculateTotalCartValue
         }}>
             {children}
         </CartContext.Provider>

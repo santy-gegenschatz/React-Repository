@@ -4,12 +4,14 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
 import Cart from '../../components/Cart/Cart';
+import { Link } from 'react-router-dom';
 import './CartContainer.css';
 
 const CartContainer = () => {
 
-  const {cartList} = useContext(CartContext);
+  const {cartList, cartIsEmpty} = useContext(CartContext);
   const [loadedCart, setLoadedCart] = useState(false);
+  const [cartIsEmptyVar, setCartIsEmptyVar] = useState(cartIsEmpty);
 
   const getProducts = (delay) => {
     let promise = new Promise ((resolve, reject) => {
@@ -29,12 +31,25 @@ const CartContainer = () => {
 
   return (
     <div>
-      {!loadedCart ?
-      <div> Loading the cart items...</div>
-      :
-      <div>
-        <Cart items = {cartList} />
+      {cartIsEmptyVar ? 
+      <div> 
+        <p id = 'white-text'> The Cart is Empty. Why don't you check out our awesome products 🤛</p>
+        <button className = 'btn btn-info' id = 'btn-store'>
+          <Link to = '/'>
+            Go To The Store
+          </Link>
+        </button>
       </div>
+      :
+        <div>
+          {!loadedCart ?
+          <div> Loading the cart items...</div>
+          :
+          <div>
+            <Cart items = {cartList} />
+          </div>
+          }
+        </div>
       }
   </div>
   )
