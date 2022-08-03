@@ -11,8 +11,6 @@ const ItemDetailContainer = () => {
 
   const {productId} = useParams();
 
-  console.log(`La categoría es: ${productId}`);
-
   // Lo que vamos a necesitar es un array de productos que llenar mediante un hook de useState
   const [product, setProduct] = useState(0);
   
@@ -35,6 +33,7 @@ const ItemDetailContainer = () => {
       setProduct(product);
     });
   }, []) 
+
   return (
     <div>
       <p className = 'white-text'> Item Detail Container</p>

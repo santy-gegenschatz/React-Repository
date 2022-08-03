@@ -1,0 +1,19 @@
+.div-button {
+    margin: 10px;
+}
+
+.div-items {
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.div-main3 {
+    background-color: burlywood;
+    border-radius: 25px;
+    margin: 10px;
+    padding: 20px;
+}
+

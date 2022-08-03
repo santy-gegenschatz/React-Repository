@@ -1,0 +1,31 @@
+.div-main2 {
+    background-color: burlywood;
+    border-radius: 25px;
+    margin: 10px;
+    width: 800px;
+    display: grid;
+    grid-template-columns: 30% 45% 25%;
+    grid-template-rows: 100%;
+    grid-template-areas:
+    'photo details buttons';
+}
+
+.div-button {
+    grid-area: buttons;
+}
+
+.div-details {
+    grid-area: details;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.div-photo {
+    grid-area: photo;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

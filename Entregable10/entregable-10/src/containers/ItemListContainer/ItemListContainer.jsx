@@ -7,9 +7,7 @@ import { useLocation, useParams } from 'react-router-dom';
 const ItemListContainer = () => {
 
     const {pathname} = useLocation();
-    console.log(`El location es: ${pathname}`);
     const {categoryId} = useParams();
-    console.log(`El categoryId es: ${categoryId}`);
     let [productos, setProductos] = useState([]);
 
     function filterProducts(productsArray) {
@@ -18,7 +16,6 @@ const ItemListContainer = () => {
             case ('/'):
                 return productsArray
             case('/categories/' + categoryId):
-            console.log("I am in");
                 productsToShow = productsArray.filter( (item) => item.category === categoryId);
                 return productsToShow
             case ('/newSeason'):

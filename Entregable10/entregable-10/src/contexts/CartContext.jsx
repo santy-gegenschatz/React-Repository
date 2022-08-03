@@ -49,12 +49,19 @@ const CartContextProvider = ({children}) => {
                 setCartList([...cartList, product]);
                 setFirstProduct(false);
                 console.log("New product, empty array");
+                console.log(product);
             } else {
                 setCartList([...cartList, product]);
                 setItemCount(itemCount + product.itemQuantity);
                 console.log("New product, full array");
             }
         }
+    }
+
+    const emptyCart = () => {
+        console.log("Emptying Cart");
+        setItemCount(0);
+        setCartList([]);
     }
 
     const totalValue = () => {
@@ -70,6 +77,7 @@ const CartContextProvider = ({children}) => {
             cartList,
             itemCount,
             addToCart,
+            emptyCart,
             totalValue
         }}>
             {children}
