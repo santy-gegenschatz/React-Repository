@@ -16,10 +16,9 @@ const Checkout = () => {
         {
         cartList.forEach( element => {
           array.push(<li key = {element.id}> {element.name}</li>)
-          
         })
         }
-      
+        <li> Hola </li>
 
       </div>
       <br />
