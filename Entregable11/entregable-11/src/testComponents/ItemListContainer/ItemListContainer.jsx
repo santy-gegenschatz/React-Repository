@@ -3,17 +3,14 @@ import ItemList from '../../components/ItemList/ItemList'
 import Products from '../../helpers/Products';
 import { useState, useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import { collection, getDocs, getFirestore } from 'firebase/firestore';
 
 const ItemListContainer = () => {
 
     const {pathname} = useLocation();
     const {categoryId} = useParams();
     let [productos, setProductos] = useState([]);
-    let [products, setProducts] = useState([]);
 
     function filterProducts(productsArray) {
-        console.log('starting')
         let productsToShow;
         switch (pathname) {
             case ('/'):
@@ -28,36 +25,25 @@ const ItemListContainer = () => {
                 return productsArray
         }
     }
-
-    async function getProducts() {
-        const db = getFirestore();
-        const itemsCollection = collection(db, 'items');
-        let firebaseProducts = [];
-        await getDocs(itemsCollection).then( (snapshot) => {
-            // Set the 
-            firebaseProducts = (snapshot.docs.map( (doc) => ({id : doc.id, ...doc.data()})));
-        })
-        return firebaseProducts;
-    }
-
-    async function presentProducts() {
-        let products = await getProducts()
-        setProducts(filterProducts(products))
-    }
-
     useEffect(() => {
-        // Get Items form the Firebase
-        presentProducts()
+        let promesa = Products(true, 2000);
+        promesa.then( (response) => {
+        // We use a function to decide which products must be shown, taking into account
+        // a - the url
+        // b - the categories, in the case the url is of a category type
+        let productsToShow = filterProducts(response);
+        setProductos(productsToShow);
+        });
     }, [])
     
     return (
         <div>
             <p className = 'white-text'> This is an Item List Container </p>
-            {products.length === 0 ? 
+            {productos.length === 0 ? 
             <p> Loading ...</p>    
             :
             <div className = 'div-centered'>
-                <ItemList items = {products}/> 
+                <ItemList items = {productos}/> 
             </div>
         }
         </div>

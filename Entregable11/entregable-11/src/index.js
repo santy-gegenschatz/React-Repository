@@ -3,7 +3,23 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyA_FyifiPhki_2KJJfb2ijrKIINBJgB_F8",
+  authDomain: "the-winter-store.firebaseapp.com",
+  projectId: "the-winter-store",
+  storageBucket: "the-winter-store.appspot.com",
+  messagingSenderId: "1078806963609",
+  appId: "1:1078806963609:web:c961e8533e1b0be65b5f08"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
