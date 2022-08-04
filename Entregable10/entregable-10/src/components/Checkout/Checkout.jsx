@@ -12,10 +12,8 @@ const Checkout = () => {
       <h3> Step 1: Review your Items</h3>
       <div>
         {/* We are going to use the curly braces to escape to jsx */}
-        {cartList.forEach( element => {
-          return (
-            <li> {element.name}</li>  
-          )
+        {cartList.map( element => {
+            <li key = {element.id}> {element.name}</li>  
         })
         }
 
@@ -25,6 +23,7 @@ const Checkout = () => {
       <div className = 'div-details-Checkout'>
         <input type="text" placeholder = 'Name'/>
         <input type="email" placeholder = 'email'/>
+        <input type="email" placeholder = 'Verify email'/>
         <input type="tel" placeholder = 'Phone' pattern = '[0-9]{2}-[0-9]{4}-[0-9]{4}'/>
       </div>
       <br />
