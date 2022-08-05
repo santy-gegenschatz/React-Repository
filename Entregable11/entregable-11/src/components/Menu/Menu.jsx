@@ -20,51 +20,23 @@ const Menu = function () {
                <div id = 'div1'>
                     <div id = 'div2'>
                          <ul>
-                              <li> <Link to = '7'> Home </Link> </li>
-
-                              <li>
-                                   <a href = "/newSeason"> New Season </a>
-                              </li>
-
-                              <li>
-                                   {/* Notar que en el onClick le estamos cambiando la visibilidad con una */}
-                                   {/* arrow function. Si directamente usara el método de useState */}
-                                   {/* Daría error, pq todo lo que esta entre {} se evalua inmediatamente */}
-                                   <a onClick = {cambiarVisibilidad} id = 'link-products' > Products </a>
-                              </li>
-
-                              <li>
-                                   <a href = "/favs"> Favs </a>
-                              </li>
-
-                              <li>
-                                   <a href = "/giftCards"> Gift Cards </a>
-                              </li>
+                              <li> <Link to = '/'> Home </Link> </li>
+                              <li> <Link to = '/newSeason'> New Season </Link> </li> 
+                              <li> <a onClick = {cambiarVisibilidad} id = 'link-products' > Products </a> </li>
+                              <li> <Link to = '/'> Wishlist </Link> </li>
+                              <li> <Link to = '/giftCards'> Gift Cards </Link> </li>
                          </ul>
                     </div>
                </div>
           </div>
-
-          {productCategoriesVisible == true 
-          && 
+          {productCategoriesVisible && 
           <div className = 'categories-menu'> 
                <div id = 'div3'>
                     <ul>
-                         <li>
-                              <a href="/categories/shirts"> Shirts </a>
-                         </li>
-
-                         <li>
-                              <a href="/categories/pants"> Pants </a>
-                         </li>
-
-                         <li>
-                              <a href="/categories/jackets"> Jackets </a>
-                         </li>
-
-                         <li>
-                              <a href="/categories/accesories"> Accesories </a>
-                         </li>
+                         <li> <Link to = '/categories/shirts'> Shirts </Link> </li>
+                         <li> <Link to = '/categories/pants'> Pants </Link> </li>
+                         <li> <Link to = '/categories/jackets'> Jackets </Link> </li>
+                         <li> <Link to = '/categories/accesories'> Accesories </Link> </li>
                     </ul>
                </div>
           </div>
