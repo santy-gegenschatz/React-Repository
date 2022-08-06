@@ -1,0 +1,21 @@
+input {
+    margin: 7px;
+}
+
+input::placeholder {
+    text-align: center;
+}
+
+.div-main-Checkout {
+    background-color: white;
+    border-radius: 25px;
+    width: 50%;
+    padding: 10px;
+}
+
+.div-details-Checkout {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
