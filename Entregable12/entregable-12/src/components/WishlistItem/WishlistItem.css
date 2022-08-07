@@ -1,5 +1,5 @@
-.div-main-cartitem {
-    background-color: #7DE2D1;
+.div-main-wishlistitem {
+    background-color: #20ef8b;
     border-radius: 25px;
     margin: 10px;
     width: 700px;
@@ -10,7 +10,7 @@
     'photo details buttons';
 }
 
-.div-button-cartitem {
+.div-button-wishlistitem {
     grid-area: buttons;
     display: flex;
     flex-direction: column;
@@ -19,7 +19,7 @@
     padding: 10px;
 }
 
-.div-details-cartitem {
+.div-details-wishlistitem {
     grid-area: details;
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@
     align-items: flex-start;
 }
 
-.div-photo-cartitem {
+.div-photo-wishlistitem {
     grid-area: photo;
     display: flex;
     flex-direction: column;
@@ -36,7 +36,7 @@
 }
 
 /* Ids */
-#cartitem-image {
+#wishlistitem-image {
     border-radius: 25px;
     margin: 0px;
 }

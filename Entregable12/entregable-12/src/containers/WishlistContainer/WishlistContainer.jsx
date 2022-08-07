@@ -1,6 +1,8 @@
 import React from 'react'
-import { useWishlistContext } from '../../contexts/WishlistContext'
+import { Link } from 'react-router-dom';
 import Wishlist from '../../components/Wishlist/Wishlist';
+import { useWishlistContext } from '../../contexts/WishlistContext';
+import './WishlistContainer.css';
 
 const WishlistContainer = () => {
     
@@ -9,16 +11,17 @@ const WishlistContainer = () => {
     
     return (
         <div className = 'div-main-wishlistContainer'>
-            WishlistContainer
             {wishlistIsEmpty()?
             <div>
                 <p className = 'white-text'>
                     Oops, seems like the wishlist is empty.
-                    Why don't you checout the store? 
+                    Why don't you checkout the store? 
                 </p>
-                <Link to = '/'>
-                    <button className = 'btn btn-sucess'> Go to the Store </button>
-                </Link>
+                    <button className = 'btn btn-sucess'> 
+                        <Link to = '/'>
+                            Go to the Store 
+                        </Link>
+                    </button>
             </div>
             :
             <Wishlist items = {wishlist}/>

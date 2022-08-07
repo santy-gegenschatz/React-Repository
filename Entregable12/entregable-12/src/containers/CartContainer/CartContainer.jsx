@@ -63,13 +63,3 @@ const CartContainer = () => {
 }
 
 export default CartContainer
-
-    // <div className = 'div-main'>
-    //     This is the CartContainer
-    //     {
-    //       cartList.map( (prod) => {
-    //         return <li key = {prod.id}> {`Producto : ${prod.name}, Cantidad : ${prod.itemQuantity}`}</li>
-    //       })
-    //     }
-    //     <button onClick = {emptyCart}> Empty Cart </button>
-    // </div>

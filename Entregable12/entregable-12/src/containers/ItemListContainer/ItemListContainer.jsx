@@ -9,7 +9,6 @@ const ItemListContainer = () => {
     const {pathname} = useLocation();
     const {categoryId} = useParams();
     let [products, setProducts] = useState([]);
-    console.log(categoryId);
     function filterProducts(productsArray) {
         console.log('starting')
         let productsToShow;

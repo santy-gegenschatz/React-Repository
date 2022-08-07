@@ -3,9 +3,11 @@ import React, { useContext } from 'react';
 import './Item.css';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../contexts/CartContext';
+import { useWishlistContext } from '../../contexts/WishlistContext';
 
 const Item = ({item}) => {
   const { addToCart } = useContext(CartContext);
+  const { addItemToWishlist } = useWishlistContext();
   const objectForCart = {...item, itemQuantity : 1}
   return (
     <div className = 'item-container'>
@@ -22,7 +24,7 @@ const Item = ({item}) => {
           <h6 className = 'white-text'> <strong>{item.price} USD </strong> </h6>
           <div>
             <button id = 'button-cart' onClick = {() => addToCart(objectForCart)}> <strong> Add to Cart </strong> </button>
-            <button id = 'button-wishlist'> <strong> Add to Wishlist ❤️ </strong> </button>
+            <button id = 'button-wishlist' onClick = {() => addItemToWishlist(item)}> <strong> Add to Wishlist ❤️ </strong> </button>
           </div>
 
         </div>
