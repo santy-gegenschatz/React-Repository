@@ -10,6 +10,7 @@ import ItemListContainer from './containers/ItemListContainer/ItemListContainer'
 import WishlistContainer from './containers/WishlistContainer/WishlistContainer';
 import CartContextProvider from './contexts/CartContext';
 import WishlistContextProvider from './contexts/WishlistContext';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 

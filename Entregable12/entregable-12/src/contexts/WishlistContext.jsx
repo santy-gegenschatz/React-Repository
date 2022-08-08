@@ -1,9 +1,8 @@
-import { limitToLast } from 'firebase/firestore';
 import React from 'react';
 import { useContext } from 'react';
 import { useState } from 'react';
 import { createContext } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 const WishlistContext = createContext();
 
@@ -21,7 +20,15 @@ const WishlistContextProvider = ({children}) => {
             // case the item exists in the wishlist
             // show a toastify alert
             console.log("Sth");
-            toast(item.name + " added to wishlist successfully");
+            toast.success('🤟 Item added to Wishlit!', {
+                position: "top-right",
+                autoClose: 2500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                });
         } else {
             // case item does not exist in wish list
             // add it
@@ -34,11 +41,16 @@ const WishlistContextProvider = ({children}) => {
         return wishlist.length === 0 ? (true) : (false);
     }
 
+    const emptyWishlist = () => {
+        setWishlist([]);
+    }
+
   return (
     <WishlistContext.Provider value = {{
         wishlist,
         addItemToWishlist,
-        wishlistIsEmpty  
+        wishlistIsEmpty,
+        emptyWishlist
     }
     }>
         {children}

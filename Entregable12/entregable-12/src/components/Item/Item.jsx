@@ -4,6 +4,7 @@ import './Item.css';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../contexts/CartContext';
 import { useWishlistContext } from '../../contexts/WishlistContext';
+import { ToastContainer } from 'react-toastify';
 
 const Item = ({item}) => {
   const { addToCart } = useContext(CartContext);
@@ -26,7 +27,6 @@ const Item = ({item}) => {
             <button id = 'button-cart' onClick = {() => addToCart(objectForCart)}> <strong> Add to Cart </strong> </button>
             <button id = 'button-wishlist' onClick = {() => addItemToWishlist(item)}> <strong> Add to Wishlist ❤️ </strong> </button>
           </div>
-
         </div>
     </div>
   )

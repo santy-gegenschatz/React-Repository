@@ -2,6 +2,7 @@ import './Menu.css';
 import CartWidget from '../CartWidget/CartWidget';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { ToastContainer } from 'react-toastify';
 
 const Menu = function () {
     const [productCategoriesVisible, setProductCategoriesVisible] = useState(false);
