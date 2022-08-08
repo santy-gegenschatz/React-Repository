@@ -2,50 +2,63 @@ import React from 'react'
 import ItemList from '../../components/ItemList/ItemList'
 import { useState, useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import { collection, getDocs, getFirestore } from 'firebase/firestore';
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 
 const ItemListContainer = () => {
+    // We get the info from the route and the url params to decide what to look for.
+    const { pathname } = useLocation();
+    const { categoryId } = useParams();
 
-    const {pathname} = useLocation();
-    const {categoryId} = useParams();
+    // An array of products to show. When it changes a hook will update the rendering.
     let [products, setProducts] = useState([]);
-    function filterProducts(productsArray) {
-        console.log('starting')
-        let productsToShow;
+
+    function createQuery(itemsCollection) {
+        let q;
+        console.log(pathname);
         switch (pathname) {
             case ('/'):
-                return productsArray
+                console.log("a");
+                q = itemsCollection;
+                break;
             case('/categories/' + categoryId):
-                productsToShow = productsArray.filter( (item) => item.category === categoryId);
-                return productsToShow
+            console.log("b");
+                q = query(itemsCollection,
+                    where('category', '==', categoryId)
+                    );
+                break;
             case ('/newSeason'):
-                productsToShow = productsArray.filter( (item) => item.newSeason === true);
-                return productsToShow
+                q = query(itemsCollection,
+                    where('newSeason', '==', true)
+                    );
+                break;
             default:
-                return productsArray
-        }
+                q =  itemsCollection;
+                break;
     }
+    return q;
+}
 
-    async function getProducts() {
+    function getProducts() {
+        setProducts([]);
+        // Initialize the client and create the collection to be accessed
         const db = getFirestore();
         const itemsCollection = collection(db, 'items');
+        // Depending on the route & params the query to Firebase will be different
+        // The createQuery function handles this process, in line with the KISS principle of the U.S. Navy
+        const productsQuery = createQuery(itemsCollection);
         let firebaseProducts = [];
-        await getDocs(itemsCollection).then( (snapshot) => {
-            // Set the 
+        getDocs(productsQuery).then( (snapshot) => {
+            // Set the array with the products
             firebaseProducts = (snapshot.docs.map( (doc) => ({id : doc.id, ...doc.data()})));
+            // Update the state
+            setProducts(firebaseProducts)
         })
-        return firebaseProducts;
-    }
-
-    async function presentProducts() {
-        setProducts([])
-        let products = await getProducts()
-        setProducts(filterProducts(products))
+        
     }
 
     useEffect(() => {
-        // Get Items form the Firebase
-        presentProducts()
+        // Get Items from the Firebase
+        getProducts();
     }, [categoryId, pathname])
     
     return (
