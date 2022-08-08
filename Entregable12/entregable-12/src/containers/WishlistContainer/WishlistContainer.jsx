@@ -17,11 +17,9 @@ const WishlistContainer = () => {
                     Oops, seems like the wishlist is empty.
                     Why don't you checkout the store? 
                 </p>
-                    <button className = 'btn btn-sucess'> 
-                        <Link to = '/'>
-                            Go to the Store 
-                        </Link>
-                    </button>
+                <Link to = '/'>
+                    <button className = 'btn btn-success'> Go to the Store </button>
+                </Link>
             </div>
             :
             <Wishlist items = {wishlist}/>
