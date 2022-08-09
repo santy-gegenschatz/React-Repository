@@ -65,7 +65,7 @@ const Checkout = () => {
     <div className = 'div-main-Checkout'> 
       { !cartIsEmpty() ?
         <div>
-        <h4> Totals2  </h4>
+        <h4> Checkout  </h4>
         <h3> Step 1: Review your Items</h3>
         <div>
           {cartList.map( element => {
@@ -74,7 +74,10 @@ const Checkout = () => {
           }
         </div>
         <br />
-        <h3> Step 2: Review your personal details</h3>
+        <h3> Step 2: Review the Total </h3>
+        <h5> Total Purchase Value : ${calculateTotalCartValue()}</h5>
+        <br />
+        <h3> Step 3: Review your personal details</h3>
         <div className = 'div-details-Checkout'>
           <input type="text" placeholder = 'Name' id = 'name'/>
           <input type="email" placeholder = 'email' id = 'emailOne'/>

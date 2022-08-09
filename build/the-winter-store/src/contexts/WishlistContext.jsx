@@ -16,24 +16,24 @@ const WishlistContextProvider = ({children}) => {
     const addItemToWishlist = (item) => {
         // Check if we can find the item id in the wishlist array
         const index = wishlist.findIndex( (element) => element.id === item.id)
-        if (index !== -1) {
-            // case the item exists in the wishlist
-            // show a toastify alert
-            console.log("Sth");
+        if (index === -1) {
+            // case item does not exist in wish list
+            // add it
+            const newWishlist = [...wishlist, item];
+            setWishlist(newWishlist); 
             toast.success('🤟 Item added to Wishlit!', {
                 position: "top-right",
-                autoClose: 2500,
-                hideProgressBar: false,
+                autoClose: 1500,
+                hideProgressBar: true,
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
                 });
-        } else {
-            // case item does not exist in wish list
-            // add it
-            const newWishlist = [...wishlist, item];
-            setWishlist(newWishlist); 
+            } else {
+            // case the item exists in the wishlist
+            // show a toastify alert
+
         }
     }
 
