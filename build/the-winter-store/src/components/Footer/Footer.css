@@ -4,8 +4,7 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    border-width: 2px;
-    border-color: white;
+    border-top : 3px solid rgb(40, 40, 40);
 }
 
 .white-text {

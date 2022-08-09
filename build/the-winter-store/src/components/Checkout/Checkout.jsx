@@ -75,14 +75,21 @@ const Checkout = () => {
         </div>
         <br />
         <h3> Step 2: Review the Total </h3>
-        <h5> Total Purchase Value : ${calculateTotalCartValue()}</h5>
-        <br />
+        <div className = 'div-purchase-checkout'>
+          <h5 id = 'purchase-value-checkout'> Total Purchase Value : ${calculateTotalCartValue()}</h5>
+        </div>
         <h3> Step 3: Review your personal details</h3>
         <div className = 'div-details-Checkout'>
           <input type="text" placeholder = 'Name' id = 'name'/>
           <input type="email" placeholder = 'email' id = 'emailOne'/>
           <input type="email" placeholder = 'Verify email' id = 'emailTwo'/>
           <input type="tel" placeholder = 'Phone' pattern = '[0-9]{2}-[0-9]{4}-[0-9]{4}' id = 'phone'/>
+        </div>
+        <br />
+        <h3> Step 4: Enter your address </h3>
+        <input type="text" id = 'address' placeholder = 'address'/>
+        <div className = 'div-googlemaps-checkout'>
+          Here goes the google maps
         </div>
         <br />
         <button className = 'btn btn-success' onClick={verifyFields}> Place Order </button>

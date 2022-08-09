@@ -23,7 +23,6 @@ const GiftcardContainer = () => {
         </div>
         :
         <div className = 'div-main-giftcardcontainer'>
-            <p className = 'white-text'> This is a GiftCard Container </p>
             <Giftcard giftcards = {giftcards}/>
         </div>
         }
