@@ -25,7 +25,7 @@ const Menu = function () {
                               <li> <Link to = '/newSeason'> New Season </Link> </li> 
                               <li> <a onClick = {cambiarVisibilidad} id = 'link-products' > Products </a> </li>
                               <li> <Link to = '/wishlist'> Wishlist </Link> </li>
-                              <li> <Link to = '/giftCards'> Gift Cards </Link> </li>
+                              <li> <Link to = '/giftcards'> Gift Cards </Link> </li>
                          </ul>
                     </div>
                </div>

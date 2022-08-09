@@ -1,0 +1,23 @@
+.div-logo-giftcardelement {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 99%;
+}
+
+.div-main-giftcardelement {
+    background-color: lightcoral;
+    border-radius: 25px;
+    height: 220px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 20px;
+    padding: 10px;
+}
+
+/* Id's */
+#h1-logo-giftcardelement {
+}

@@ -12,6 +12,7 @@ import CartContextProvider from './contexts/CartContext';
 import WishlistContextProvider from './contexts/WishlistContext';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import GiftcardContainer from './containers/GiftcardContainer/GiftcardContainer';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
               <Route path = '/cart' element = {<CartContainer />} > </Route>
               <Route path = 'checkout' element = {<CheckoutContainer />} > </Route>
               <Route path = '/categories/:categoryId' element = {<ItemListContainer />} > </Route>
+              <Route path = 'giftcards' element = {<GiftcardContainer />} > </Route>
               <Route path = '/items/:productId' element = {<ItemDetailContainer />} > </Route>
               <Route path = '/newSeason' element = {<ItemListContainer />} />
               <Route path = '/wishlist' element = {<WishlistContainer />} />
