@@ -14,7 +14,6 @@ const ItemListContainer = () => {
 
     function createQuery(itemsCollection) {
         let q;
-        console.log(pathname);
         switch (pathname) {
             case ('/'):
                 console.log("a");

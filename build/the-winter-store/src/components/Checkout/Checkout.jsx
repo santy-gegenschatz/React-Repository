@@ -2,12 +2,12 @@ import React from 'react';
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import './Checkout.css'
 
 const Checkout = () => {
-  const { cartList, cartIsEmpty, calculateTotalCartValue} = useContext(CartContext); 
+  const { cartList, cartIsEmpty, emptyCart, calculateTotalCartValue} = useContext(CartContext); 
 
   const verifyFields = () => {
     const emailOne = document.getElementById('emailOne').value;
@@ -53,13 +53,22 @@ const Checkout = () => {
 
   }
 
+  const navigate = useNavigate();
+  const clearCartAndGoHome = () => {
+    emptyCart();
+    navigate('/');
+  }
+
   const setOrderId = (id) => {
     const successMessage = {
       title : '¡Success!',
       text : 'We knew you could do it :) Your order id is: ' + id,
-      imageUrl : 'https://media4.giphy.com/media/RHIYhjyA2R8IibyqPU/giphy.gif?cid=ecf05e47vkq7lb3egy5kuj7pw0n873hujj96ami2o0qvdo0b&rid=giphy.gif&ct=g'
+      imageUrl : 'https://media2.giphy.com/media/xNBcChLQt7s9a/giphy.gif?cid=ecf05e47g8u1zzqg6inl6ixh1oywlgp2zc86j4zfs8ck4el5&rid=giphy.gif&ct=g'
     }
-    Swal.fire(successMessage);
+    Swal.fire(successMessage)
+    .then(() => {
+      clearCartAndGoHome();
+    })
   }
   return (
     <div className = 'div-main-Checkout'> 
@@ -86,20 +95,15 @@ const Checkout = () => {
           <input type="tel" placeholder = 'Phone' pattern = '[0-9]{2}-[0-9]{4}-[0-9]{4}' id = 'phone'/>
         </div>
         <br />
-        <h3> Step 4: Enter your address </h3>
-        <input type="text" id = 'address' placeholder = 'address'/>
-        <div className = 'div-googlemaps-checkout'>
-          Here goes the google maps
-        </div>
         <br />
         <button className = 'btn btn-success' onClick={verifyFields}> Place Order </button>
       </div>
         :
         <div>
-          <p className = 'white-text'> Oops, it seems the cart is empty. </p>   
+          <p> Oops, it seems the cart is empty. </p>   
           <br />
           <Link to = '/'>
-            <button className = 'btn btn-success'> Go to the Store </button>
+            <button className = 'btn btn-success'> Go to the Store & keep Shopping </button>
           </Link>
         </div>
       }
