@@ -62,7 +62,6 @@ const ItemListContainer = () => {
     
     return (
         <div>
-            <p className = 'white-text'> This is an Item List Container </p>
             {products.length === 0 ? 
             <p className = 'white-text'> Loading ...</p>    
             :
