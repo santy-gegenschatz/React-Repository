@@ -2,7 +2,7 @@
 ## _A brief intro_
 
 The Winter Store is fully functional online store, which features several products hosted on a Firebase database. It is hosted here:
-https://majestic-moxie-da4f9a.netlify.app/
+https://thewinterstore.netlify.app/
 
 ## Features
 - Browse by categories
