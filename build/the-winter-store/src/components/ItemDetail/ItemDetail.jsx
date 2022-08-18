@@ -11,7 +11,7 @@ const ItemDetail = ({item}) => {
     const { addItemToWishlist } = useWishlistContext();
     
     const userAddToCart = (itemQuantity) => {
-        addToCart({...item, itemQuantity})
+        addToCart({...item, itemQuantity}, false);
         setPurchase(true);
     }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { useState } from 'react';
 import { createContext } from 'react';
-import { toast } from 'react-toastify';
+import { cssTransition, toast } from 'react-toastify';
 
 const WishlistContext = createContext();
 
@@ -25,15 +25,25 @@ const WishlistContextProvider = ({children}) => {
                 position: "top-right",
                 autoClose: 1500,
                 hideProgressBar: true,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
+                closeOnClick: false,
+                pauseOnHover: false,
+                draggable: false,
                 progress: undefined,
+                theme : 'colored'
                 });
             } else {
             // case the item exists in the wishlist
-            // show a toastify alert
-
+            // show a toastify alert saying the item is already on the wishlist
+            toast.warning('Whooia there boy! Item already in the wishlist', {
+                position: "top-right",
+                autoClose: 1500,
+                hideProgressBar: true,
+                closeOnClick: false,
+                pauseOnHover: false,
+                draggable: false,
+                progress: undefined,
+                theme : 'colored'
+                });
         }
     }
 

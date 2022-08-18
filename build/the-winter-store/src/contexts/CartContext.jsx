@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { createContext } from "react";
-
-// Notar que el carrito de compras va a ser un array con objetos de tipo producto adentro
-// cada objeto además va a tener una variable que representa la cantidad de items de ese tipo
-// que han sido comprados
+import { toast } from "react-toastify";
 export const CartContext = createContext([]);
 
 const CartContextProvider = ({children}) => {
@@ -15,45 +12,44 @@ const CartContextProvider = ({children}) => {
     const calculateTotalItems = () => {
         let counter = 0;
         cartList.forEach(element => {
-        console.log("Element" , element);
         counter += element.itemQuantity;
         });
         setItemCount(counter);
-        console.log("Counter : ", counter);
       }
     
-    const addToCart = (product) => {
+    const addToCart = (product, showAlert) => {
         let productoExistente = false;
         cartList.forEach( (prod) => {
             if (prod.id ===product.id) {
                 productoExistente = true;
-                console.log("El producto ya está añadido al array");
             }
         });
-
         if (productoExistente) {
             let existingProduct = cartList.find((prod) => prod.id === product.id);
-            console.log("El producto recibido por parámetro");
-            console.log(product);
-            console.log("El producto encontrado en el array");
-            console.log(existingProduct);
-            console.log("La cantidad actual", existingProduct.itemQuantity);
-            console.log("La cantidad recibida", product.itemQuantity);
             existingProduct.itemQuantity = existingProduct.itemQuantity + product.itemQuantity;            
-            console.log("La cantidad actualizada : ", existingProduct.itemQuantity);
             calculateTotalItems();
         } else {
             if (firstProduct) {
                 setItemCount(product.itemQuantity);
                 setCartList([...cartList, product]);
                 setFirstProduct(false);
-                console.log("New product, empty array");
-                console.log(product);
             } else {
                 setCartList([...cartList, product]);
                 setItemCount(itemCount + product.itemQuantity);
-                console.log("New product, full array");
             }
+        }
+        // Show a toastify alert if indicated in the parameters
+        if (showAlert) {
+            toast.success('Item added to Cart Successfully', {
+                position: "top-right",
+                autoClose: 1500,
+                hideProgressBar: true,
+                closeOnClick: false,
+                pauseOnHover: false,
+                draggable: false,
+                progress: undefined,
+                theme : 'colored'
+                });
         }
     }
 
@@ -64,7 +60,7 @@ const CartContextProvider = ({children}) => {
     }
 
     const cartIsEmpty = () => {
-        if (itemCount == 0) {
+        if (itemCount === 0) {
             return true
         } else {
             return false
