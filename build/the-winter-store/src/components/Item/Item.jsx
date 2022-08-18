@@ -4,7 +4,6 @@ import './Item.css';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../contexts/CartContext';
 import { useWishlistContext } from '../../contexts/WishlistContext';
-import { ToastContainer } from 'react-toastify';
 
 const Item = ({item}) => {
   const { addToCart } = useContext(CartContext);

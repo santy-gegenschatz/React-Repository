@@ -81,7 +81,7 @@ const Checkout = () => {
         <h3> Step 3: Review your personal details</h3>
         <div className = 'div-details-Checkout'>
           <input type="text" placeholder = 'Name' id = 'name'/>
-          <input type="email" placeholder = 'email' id = 'emailOne'/>
+          <input type="email" placeholder = 'Email' id = 'emailOne'/>
           <input type="email" placeholder = 'Verify email' id = 'emailTwo'/>
           <input type="tel" placeholder = 'Phone' pattern = '[0-9]{2}-[0-9]{4}-[0-9]{4}' id = 'phone'/>
         </div>
